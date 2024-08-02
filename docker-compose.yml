@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  Etcd:
+    network_mode: host
+    image: 'www.local-repo.com/bitnami/etcd:latest'
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd-server:2379
+    volumes:
+      -  /opt/apps/etcd/Etcd.conf.yml:/opt/bitnami/etcd/conf/et
